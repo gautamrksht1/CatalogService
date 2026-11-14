@@ -2,14 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY database.py ./database.py
-COPY CatalogService/requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 
 RUN pip install \
     --no-cache-dir \
     -r requirements.txt
 
-COPY CatalogService/. .
+COPY . .
 
 EXPOSE 8001
 
